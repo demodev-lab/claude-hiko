@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { useState } from 'react';
 import Signup from './pages/Signup';
 import MainLayout from './components/MainLayout';
+import CommunityDetail from './pages/CommunityDetail';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -15,6 +16,7 @@ function App() {
         {/* 메인 앱 라우트들 */}
         <Route path="/home" element={<MainLayout />} />
         <Route path="/community" element={<MainLayout />} />
+        <Route path="/community/:id" element={<CommunityDetail />} />
         <Route path="/chat" element={<MainLayout />} />
         
         {/* 기본 경로 - 회원가입으로 리다이렉트 */}
