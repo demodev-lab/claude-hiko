@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Home from '../pages/Home';
 import Community from '../pages/Community';
 import Chat from '../pages/Chat';
+import MyPage from '../pages/MyPage';
 
 const MainLayout = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const MainLayout = () => {
     if (path === '/home') return '홈';
     if (path === '/community') return '커뮤니티';
     if (path === '/chat') return '채팅';
+    if (path === '/mypage') return '내관리';
     return '홈';
   };
   
@@ -35,7 +37,7 @@ const MainLayout = () => {
         navigate('/chat');
         break;
       case '내관리':
-        // 내관리 페이지는 아직 구현되지 않음
+        navigate('/mypage');
         break;
     }
   };
@@ -45,6 +47,7 @@ const MainLayout = () => {
     if (path === '/home') return <Home />;
     if (path === '/community') return <Community />;
     if (path === '/chat') return <Chat />;
+    if (path === '/mypage') return <MyPage />;
     return <Home />;
   };
 

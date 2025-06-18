@@ -18,6 +18,7 @@ function App() {
         <Route path="/community" element={<MainLayout />} />
         <Route path="/community/:id" element={<CommunityDetail />} />
         <Route path="/chat" element={<MainLayout />} />
+        <Route path="/mypage" element={<MainLayout />} />
         
         {/* 기본 경로 - 회원가입으로 리다이렉트 */}
         <Route path="/" element={<Navigate to="/signup" replace />} />
