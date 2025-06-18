@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, Bell, Globe, Plus, Users, MessageSquare, Calendar, BookOpen, Coffee, Heart, MapPin, Clock, Star, Shield, ChevronRight, Filter, Zap, Award, HelpCircle, Languages, Briefcase, Home, Camera, ChevronDown, Pin, TrendingUp, UserPlus, Building, Phone } from 'lucide-react';
 
 const HikoCommunityStructure = () => {
+  const navigate = useNavigate();
   // 사용자 설정 (가입시 인증한 국가)
   const userCountry = '🇻🇳 베트남';
   const [selectedTab, setSelectedTab] = useState('마이타운');
@@ -498,7 +500,11 @@ const HikoCommunityStructure = () => {
   );
 
   const renderContentCard = (content) => (
-    <div key={content.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden mb-4">
+    <div 
+      key={content.id} 
+      className="bg-white rounded-lg border border-gray-200 overflow-hidden mb-4 cursor-pointer hover:shadow-md transition-shadow"
+      onClick={() => navigate(`/community/${content.id}`)}
+    >
       <div className="p-4">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center space-x-3">
